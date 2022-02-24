@@ -46,7 +46,7 @@ Insert into students (name,age,gender) values('Aswath',17,'M');<br>
 Select *from students;
 
 | id | name   | age | gender |
-|:----| 
+|:----|:----|:----|:----|
 |  1 | Haiden |  19 | M      |
 |  2 | Aswath |  17 | M      |
 
@@ -58,7 +58,7 @@ Select *from students;
 Select * from students where id=1;
 
 | id | name   | age | gender |
-|:----| 
+|:----|:----|:----|:----|
 |  1 | Haiden |  19 | M      |
 
 1 row in set (0.00 sec)
@@ -76,7 +76,7 @@ Alter table students add degree varchar(20);<br>
 Select *from students;
 
 | id | name   | age | gender | degree |
-|:----| 
+|:----|:----|:----|:-----|:----|
 |  1 | Haiden |  19 | M      | NULL   |
 |  2 | Aswath |  17 | M      | NULL   |
 
@@ -95,7 +95,7 @@ Update students set degree='+2' where id=1;<br>
 Select *from students;
 
 | id | name   | age | gender | degree |
-|:----| 
+|:----|:----|:-----|:-----|:----|
 |  1 | Haiden |  19 | M      | +2     |
 |  2 | Aswath |  17 | M      | NULL   |
 
@@ -113,7 +113,7 @@ Delete from students where id=1;<br>
 Select *from students;
 
 | id | name   | age | gender | degree |
-|:----| 
+|:----|:----|:----|:----|:-----|
 |  2 | Aswath |  17 | M      | NULL   |
 
 1 row in set (0.00 sec)

@@ -20,7 +20,7 @@
 
 <h1>Foreign Key</h1>
 Create table marklist(studid int,marks int(3),grade varchar(5),personal_id int,foreign key(personal_id) references students(id));<br>
-    Query OK, 0 rows affected, 1 warning (0.04 sec)
+    Query OK, 0 rows affected, 1 warning (0.04 sec)<br><rb>
 
 
 Insert into marklist values(1,100,'A',2);<br>

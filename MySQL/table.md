@@ -29,19 +29,19 @@ Desc students;<br>
 4 rows in set (0.00 sec)
 
 
-<h1>Inserting Values<h1>
+<h1>Inserting Values</h1>
 
 Insert into students (name,age,gender) values('Haiden',19,'M');<br>
     Query OK, 1 row affected (0.01 sec)
 
 
-<h1>Inserting Values<h1>
+<h1>Inserting Values</h1>
 
 Insert into students (name,age,gender) values('Aswath',17,'M');<br>
     Query OK, 1 row affected (0.01 sec)
 
 
-<h1>Select Statement<h1>
+<h1>Select Statement</h1>
 
 Select *from students;
 
@@ -53,7 +53,7 @@ Select *from students;
 2 rows in set (0.00 sec)
 
 
-<h1>Select Statement<h1>
+<h1>Select Statement</h1>
 
 Select * from students where id=1;
 
@@ -64,14 +64,14 @@ Select * from students where id=1;
 1 row in set (0.00 sec)
 
 
-<h1>Alter Table Statement<h1>
+<h1>Alter Table Statement</h1>
 
 Alter table students add degree varchar(20);<br>
     Query OK, 0 rows affected (0.03 sec)
     Records: 0  Duplicates: 0  Warnings: 0
 
 
-<h1>Select Statement<h1>
+<h1>Select Statement</h1>
 
 Select *from students;
 
@@ -83,14 +83,14 @@ Select *from students;
 2 rows in set (0.00 sec)
 
 
-<h1>Update Statement<h1><br>
+<h1>Update Statement</h1><br>
 
 Update students set degree='+2' where id=1;<br>
     Query OK, 1 row affected (0.01 sec)
     Rows matched: 1  Changed: 1  Warnings: 0
 
 
-<h1>Select Statement<h1>
+<h1>Select Statement</h1>
 
 Select *from students;
 
@@ -102,13 +102,13 @@ Select *from students;
 2 rows in set (0.00 sec)
 
 
-<h1>Delete Statement<h1>
+<h1>Delete Statement</h1>
 
 Delete from students where id=1;<br>
     Query OK, 1 row affected (0.00 sec)
 
 
-<h1>Select Statement<h1>
+<h1>Select Statement</h1>
 
 Select *from students;
 

@@ -208,7 +208,17 @@ mysql> select *from students;
 |  2 | vimal  | pytacax@gmail.com   | 9043494315 | tacax    | M      | NULL       | 2021-07-20 00:00:00 |
 |  3 | rishi  | brainy@gmail.com    | 9043494315 | password | M      | NULL       | 2021-07-20 00:00:00 |
 
-3 rows in set (0.00 sec)
+3 rows in set (0.00 sec)<br>
+
+select *from students where dob is NULL;
+
+| id | name  | email             | mobile_no  | password | gender | dob  | created_date        |
+|:----|:----|:----|:-----|:-----|:-----|:----|:----|
+|  2 | vimal | pytacax@gmail.com | 9043494315 | tacax    | M      | NULL | 2021-07-20 00:00:00 |
+|  3 | rishi | brainy@gmail.com  | 9043494315 | password | M      | NULL | 2021-07-20 00:00:00 |
+
+2 rows in set (0.00 sec)
+
 
 
 <h1>####10.Total no of students actively studying in this school</h1>

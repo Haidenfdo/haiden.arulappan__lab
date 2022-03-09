@@ -1,0 +1,254 @@
+### show databases;
+
+| Database           |
+|:-----|
+| blazers            |
+| exercise           |
+| hotelinminutes     |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+
+7 rows in set (0.01 sec)
+
+### mysql> use blazers;
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+### mysql> show tables;
+
+| Tables_in_blazers |
+|:----|
+| students          |
+
+1 row in set (0.00 sec)
+
+### mysql> select * from students;
+
+| id | name   | age  | gender |
+|:----|:----|:----|:----|
+|  1 | haiden |   20 | M      |
+|  2 | aswath |   18 | M      |
+|  3 | sanboi |   18 | M      |
+
+3 rows in set (0.00 sec)
+
+
+### mysql> create table User(id int auto_increment primary key,name varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+### mysql> desc User;
+
+| Field | Type        | Null | Key | Default | Extra          |
+|:----|:----|:----|:----|:----|:----|
+| id    | int         | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20) | NO   |     | NULL    |                |
+
+2 rows in set (0.00 sec)
+
+### mysql> create table Batch(id int auto_increment primary key,name varchar(20) not null);
+Query OK, 0 rows affected (0.05 sec)
+
+### mysql> desc Batch;
+
+| Field | Type        | Null | Key | Default | Extra          |
+|:----|:-----|:-----|:-----|:-----|:-----|
+| id    | int         | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(20) | NO   |     | NULL    |                |
+
+2 rows in set (0.00 sec)
+
+
+### mysql> create table Course(id int auto_increment primary key,name varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+### mysql>Inserting
+
+mysql> insert into User (name) values('Aswath');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into User (name) values('Haiden');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Batch (name) values('Batch1');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Batch (name) values('Batch2');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Course (name) values('HTML');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Course (name) values('CSS');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Course (name) values('JS');
+Query OK, 1 row affected (0.01 sec)
+
+### mysql> selcting tables;
+
+mysql> select *from User;
+
+| id | name   |
+|:----|:----|
+|  1 | Aswath |
+|  2 | Haiden |
+
+2 rows in set (0.00 sec)
+
+mysql> select *from Batch;
+
+| id | name   |
+|:----|:-----|
+|  1 | Batch1 |
+|  2 | Batch2 |
+
+2 rows in set (0.00 sec)
+
+mysql> select *from Course;
+
+| id | name |
+|:----|:----|
+|  1 | HTML |
+|  2 | CSS  |
+|  3 | JS   |
+
+3 rows in set (0.00 sec)
+
+### mysql> create table batch_users (id int auto_increment primary key,Batch_id int, foreign key(Batch_id) references Batch(id),User_id int,foreign key(User_id) references User(id));
+Query OK, 0 rows affected (0.05 sec)
+
+### mysql> desc batch_users;
+
+| Field    | Type | Null | Key | Default | Extra          |
+|:-----|:-----|:----|:----|:----|:----|
+| id       | int  | NO   | PRI | NULL    | auto_increment |
+| Batch_id | int  | YES  | MUL | NULL    |                |
+| User_id  | int  | YES  | MUL | NULL    |                |
+
+3 rows in set (0.00 sec)
+
+### mysql>inserting values;
+
+mysql> insert into batch_users(Batch_id,User_id) values(1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into batch_users(Batch_id,User_id) values(2,2);
+Query OK, 1 row affected (0.01 sec)
+
+### mysql> select * from batch_users;
+
+| id | Batch_id | User_id |
+|:----|:----|:-----|
+|  1 |        1 |       1 |
+|  2 |        2 |       2 |
+
+2 rows in set (0.00 sec)
+
+### mysql> create table batch_courses (id int auto_increment primary key,Batch_id int, foreign key(Batch_id) references Batch(id),Course_id int,foreign key(Course_id) references Course(id));
+Query OK, 0 rows affected (0.05 sec)
+
+### mysql> inserting values;
+
+mysql> insert into batch_courses(Batch_id,Course_id) values(1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into batch_courses(Batch_id,Course_id) values(2,2);
+Query OK, 1 row affected (0.00 sec)
+
+### mysql> select * from batch_courses;
+
+| id | Batch_id | Course_id |
+|:----|:----|:----|
+|  1 |        1 |         1 |
+|  2 |        2 |         2 |
+
+2 rows in set (0.00 sec)
+
+
+### mysql> select Batch.id,User.name,Batch.name from User inner join Batch on Batch.id=User.id;
+
+| id | name   | name   |
+|:----|:----|:----|
+|  1 | Aswath | Batch1 |
+|  2 | Haiden | Batch2 |
+
+2 rows in set (0.00 sec)
+
+### mysql> select Batch.id,Course.name,Batch.name from Batch join Course on Batch.id=Course.id;
+
+| id | name | name   |
+|:----|:----|:----|
+|  1 | HTML | Batch1 |
+|  2 | CSS  | Batch2 |
+
+2 rows in set (0.00 sec)
+
+### mysql> select Batch.name,Batch.id,User.name,Course.id,Course.name from User join Batch on User.id=Batch.id join Course on User.id=Course.id;
+
+| name   | id | name   | id | name |
+|:-----|:----|:----|:----|
+| Batch1 |  1 | Aswath |  1 | HTML |
+| Batch2 |  2 | Haiden |  2 | CSS  |
+
+2 rows in set (0.00 sec)
+
+### mysql> select User.id,Batch.name,Batch.id,User.name,Course.id,Course.name from User join Batch on User.id=Batch.id join Course on User.id=Course.id;
+
+
+| id | name   | id | name   | id | name |
+|:----|:---|:----|:----|:---|:----|
+|  1 | Batch1 |  1 | Aswath |  1 | HTML |
+|  2 | Batch2 |  2 | Haiden |  2 | CSS  |
+
+2 rows in set (0.00 sec)
+
+### mysql> select User.id,Batch.name Batch_name,Batch.id,User.name,Course.id,Course.name from User join Batch on User.id=Batch.id join Course on User.id=Course.id;
+
+
+| id | Batch_name | id | name   | id | name |
+|:----|:----|:----|:-----|:-----|:----|
+|  1 | Batch1     |  1 | Aswath |  1 | HTML |
+|  2 | Batch2     |  2 | Haiden |  2 | CSS  |
+
+2 rows in set (0.00 sec)
+
+### mysql> select User.id User_id,Batch.name Batch_name,Batch.id Batch_id,User.name User_name,Course.id Course_id,Course.name Course_name from User join Batch on User.id=Batch.id join Course on User.id=Cours
+
+
+| User_id | Batch_name | Batch_id | User_name | Course_id | Course_name |
+|:----|:-----|:----|:-----|:----|:----|
+|       1 | Batch1     |        1 | Aswath    |         1 | HTML        |
+|       2 | Batch2     |        2 | Haiden    |         2 | CSS         |
+
+2 rows in set (0.00 sec)
+
+### mysql> select User.id User_id,Batch.name Batch_name,Batch.id Batch_id,User.name User_name,Course.id Course_id,Course.name Course_name from User join Batch on User.id=Batch.id join Course on User.id=Course.id where Course.name='HTML';
+
+| User_id | Batch_name | Batch_id | User_name | Course_id | Course_name |
+|:-----|:----|:----|:-----|:-----|:-----|
+|       1 | Batch1     |        1 | Aswath    |         1 | HTML        |
+
+1 row in set (0.01 sec)
+
+### mysql>select User.id User_id,Batch.name Batch_name,Batch.id Batch_id,User.name User_name,Course.id Course_id,Course.name Course_name from User join Batch on User.id=Batch.id join Course on User.id=Course.id where User.name='Aswath';
+
+| User_id | Batch_name | Batch_id | User_name | Course_id | Course_name |
+|:-----|:-----|:-----|:-----|:-----|:-----|
+|       1 | Batch1     |        1 | Aswath    |         1 | HTML        |
+
+1 row in set (0.00 sec)
+
+### mysql>  select User.id User_id,Batch.name Batch_name,Batch.id Batch_id,User.name User_name,Course.id Course_id,Course.name Course_name from User join Batch on User.id=Batch.id join Course on User.id=Course.id where User.name='Haiden';
+
+| User_id | Batch_name | Batch_id | User_name | Course_id | Course_name |
+|:----|:----|:-----|:----|:----|:----|
+|       2 | Batch2     |        2 | Haiden    |         2 | CSS         |
+
+1 row in set (0.00 sec)
+
+

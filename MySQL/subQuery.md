@@ -77,7 +77,7 @@ mysql> select a.* from (select *from library where price>2000) as a;
 mysql> select a.*,b.* from (select *from library where price>2000) as a,(select *from students where id=1) as b;
 
 | id | author   | type  | name            | price | id | name   | age  | gender |
-
+|:----|:----|:----|:----|:----|:----|:----|:----|:----|
 |  2 | Kaushik  | novel | love each other |  3000 |  1 | haiden |   20 | M      |
 |  3 | prasanna | Tech  | pyhton master   |  3000 |  1 | haiden |   20 | M      |
 |  4 | vimal    | story | STR             |  3000 |  1 | haiden |   20 | M      |
@@ -87,10 +87,10 @@ mysql> select a.*,b.* from (select *from library where price>2000) as a,(select 
 ### Selecting the values using subquery by like%;
 
 select a.* from(select *from library where author like('K%')) as a;
-+----+---------+-------+-----------------+-------+
+
 | id | author  | type  | name            | price |
-+----+---------+-------+-----------------+-------+
+|:----|:----|:----|:----|:----|
 |  2 | Kaushik | novel | love each other |  3000 |
-+----+---------+-------+-----------------+-------+
+
 1 row in set (0.00 sec)
 

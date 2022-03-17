@@ -26,7 +26,7 @@ Empty set (0.00 sec)
 ### mysql> desc users;
 
 | Field    | Type        | Null | Key | Default | Extra |
-|:----|:----|:----|:-----|:----|
+|:----|:----|:----|:-----|:----|:---|
 | id       | int         | YES  |     | NULL    |       |
 | name     | varchar(50) | YES  |     | NULL    |       |
 | email    | varchar(50) | NO   | PRI | NULL    |       |
@@ -46,7 +46,7 @@ Query OK, 1 row affected (0.01 sec)
 ### select *from users;
 
 | id   | name   | email               | password | age  |
-|:-----|:----|:----|:-----|:----|:----|
+|:-----|:----|:----|:-----|:----|
 |    2 | aswath | alone@gmail.com     | aswathka |   18 |
 |    1 | Haiden | haidenfdo@gmail.com | password |   20 |
 

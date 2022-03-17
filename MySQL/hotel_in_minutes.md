@@ -26,7 +26,7 @@ Empty set (0.00 sec)
 ### mysql> desc users;
 
 | Field    | Type        | Null | Key | Default | Extra |
-|:----|:----|:----|:-----|:----|:----|
+|:----|:----|:----|:-----|:----|
 | id       | int         | YES  |     | NULL    |       |
 | name     | varchar(50) | YES  |     | NULL    |       |
 | email    | varchar(50) | NO   | PRI | NULL    |       |

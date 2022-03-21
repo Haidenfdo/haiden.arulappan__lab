@@ -373,6 +373,27 @@ Empty set (0.01 sec)
 
 2 rows in set (0.00 sec)
 
++--------------------------+
+| Tables_in_hotelinminutes |
++--------------------------+
+| adding_hotels            |
+| admins                   |
+| bill                     |
+| bookings                 |
+| employees                |
+| manager                  |
+| payment                  |
+| review                   |
+| room                     |
+| roomform                 |
+| server                   |
+| server_list              |
+| special_offers           |
+| users                    |
++--------------------------+
+14 rows in set (0.00 sec)
+
+
 
 
 

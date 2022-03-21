@@ -394,6 +394,19 @@ Empty set (0.01 sec)
 14 rows in set (0.00 sec)
 
 
+desc bill;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| name       | varchar(40) | YES  | MUL | NULL    |       |
+| bill_id    | int         | NO   | PRI | NULL    |       |
+| order_id   | int         | YES  |     | NULL    |       |
+| total_bill | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+
 
 
 

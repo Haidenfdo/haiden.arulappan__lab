@@ -308,3 +308,72 @@ Query OK, 1 row affected (0.01 sec)
 2 rows in set (0.00 sec)
 
 
+###### creating index;
+
+
+###  mysql> create index pers_id
+  ###  -> on users(email);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+### mysql> show index from users;
+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|:----|:----|:-----|:----|:---|:----|:----|:----|:----|:-----|:----|:----|:----|:----|:---|
+| users |          0 | PRIMARY  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| users |          1 | pers_id  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+
+2 rows in set (0.02 sec)
+
+
+##### subquery;
+
+### mysql> select a.*,b.* from(select * from users where age>18) as a,(select * from roomform where room_no=8) as b;
+
+| id   | name   | email               | password | age  | roll_id | id   | name   | email           | total_rooms | adults | childrens | room_no |
+|:----|:----|:----|:---|:----|:----|:----|:----|:----|:----|:-----|:----|:---|
+|    1 | Haiden | haidenfdo@gmail.com | password |   20 |       1 |    2 | aswath | alone@gmail.com |           3 |      3 |         2 |       8 |
+
+1 row in set (0.01 sec)
+
+
+### multiple subquery;
+
+  ### mysql> select name,email,age,roll_id
+   ### -> from users
+  ###  -> where (name,age) IN
+  ###  -> (select name,age
+  ###  -> from users
+  ###  -> group by name);
+
+
+| name   | email               | age  | roll_id |
+|:---|:----|:---|:---|
+| aswath | alone@gmail.com     |   18 |       2 |
+| Haiden | haidenfdo@gmail.com |   20 |       1 |
+
+2 rows in set (0.00 sec)
+
+
+
+#### creating view;
+
+### mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;
+Query OK, 0 rows affected (0.01 sec)
+
+### mysql> select * from server_list;
+Empty set (0.01 sec)
+
+### mysql> desc server_list;
+
+| Field      | Type        | Null | Key | Default | Extra |
+|:----|:----|:----|:---|:----|:---|
+| emp_name   | varchar(40) | YES  |     | NULL    |       |
+| emp_salary | int         | YES  |     | NULL    |       |
+
+2 rows in set (0.00 sec)
+
+
+
+
+

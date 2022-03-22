@@ -1,4 +1,5 @@
-### show databases;
+
+``` show databases;```
 
 | Database           |
 |:-----|
@@ -13,17 +14,17 @@
 7 rows in set (0.00 sec)
 
 
-### use hotelinminutes;
+``` use hotelinminutes;```
+
 Database changed
 
 
-### mysql> show tables;
-Empty set (0.00 sec)
+### creating table;
 
-### mysql> create table users(id int,name varchar(50),email varchar(50) primary key,password varchar(8),age int(3));<br>
- Query OK, 0 rows affected, 1 warning (0.04 sec)
+``` mysql> create table users(id int,name varchar(50),email varchar(50) primary key,password varchar(8),age int(3));<br>```
+ ```Query OK, 0 rows affected, 1 warning (0.04 sec)```
 
-### mysql> desc users;
+``` mysql> desc users;```
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:-----|:----|:---|
@@ -35,15 +36,15 @@ Empty set (0.00 sec)
 
 5 rows in set (0.00 sec)
 
-### mysql> insert into users values(1,'Haiden','haidenfdo@gmail.com','password',20);<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into users values(1,'Haiden','haidenfdo@gmail.com','password',20);```
+```Query OK, 1 row affected (0.01 sec)```
 
 
-### mysql> insert into users values(2,'aswath','alone@gmail.com','aswathka',18);<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into users values(2,'aswath','alone@gmail.com','aswathka',18);<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
 
-### select *from users;
+``` select *from users;```
 
 | id   | name   | email               | password | age  |
 |:-----|:----|:----|:-----|:----|
@@ -52,10 +53,10 @@ Query OK, 1 row affected (0.01 sec)
 
 2 rows in set (0.00 sec)
 
-### mysql> create table roomform(id int,name varchar(40) primary key,email varchar(50),total_rooms int(2),adults int(2),childrens int(2),foreign key(email) references users(email));<br>
- Query OK, 0 rows affected, 3 warnings (0.05 sec)
+``` mysql> create table roomform(id int,name varchar(40) primary key,email varchar(50),total_rooms int(2),adults int(2),childrens int(2),foreign key(email) references users(email));<br>```
+ ```Query OK, 0 rows affected, 3 warnings (0.05 sec)```
 
-### mysql> desc roomform;
+``` mysql> desc roomform;```
 
 | Field       | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -68,15 +69,15 @@ Query OK, 1 row affected (0.01 sec)
 
 6 rows in set (0.01 sec)
 
-### mysql> insert into roomform values(1,'Haiden','haidenfdo@gmail.com',4,2,5);<br>
-Query OK, 1 row affected (0.02 sec)
+``` mysql> insert into roomform values(1,'Haiden','haidenfdo@gmail.com',4,2,5);<br>```
+```Query OK, 1 row affected (0.02 sec)```
 
 
-### mysql> insert into roomform values(2,'aswath','alone@gmail.com',3,3,2);<br>
-Query OK, 1 row affected (0.00 sec)
+``` mysql> insert into roomform values(2,'aswath','alone@gmail.com',3,3,2);<br>```
+```Query OK, 1 row affected (0.00 sec)```
 
 
-### mysql> select * from roomform;
+``` mysql> select * from roomform;```
 
 | id   | name   | email               | total_rooms | adults | childrens |
 |:-----|:----|:----|:----|:---|:---|
@@ -85,12 +86,13 @@ Query OK, 1 row affected (0.00 sec)
 
 2 rows in set (0.00 sec)
 
+### creating table;
 
-### mysql> create table review(id int,name varchar(40),feedback varchar(30),foreign key(name) references roomform(name));<br>
-Query OK, 0 rows affected (0.05 sec)
+``` mysql> create table review(id int,name varchar(40),feedback varchar(30),foreign key(name) references roomform(name));<br>```
+```Query OK, 0 rows affected (0.05 sec)```
 
 
-### mysql> desc review;
+``` mysql> desc review;```
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -101,15 +103,15 @@ Query OK, 0 rows affected (0.05 sec)
 3 rows in set (0.01 sec)
 
 
-### mysql> insert into review values(1,'Haiden','good');<br>
+``` mysql> insert into review values(1,'Haiden','good');<br>```
 Query OK, 1 row affected (0.01 sec)
 
 
-### mysql> insert into review values(2,'aswath','excellent');<br>
+``` mysql> insert into review values(2,'aswath','excellent');<br>```
 Query OK, 1 row affected (0.01 sec)
 
 
-### mysql> select * from review;
+``` mysql> select * from review;```
 
 | id   | name   | feedback  |
 |:----|:----|:----|
@@ -118,16 +120,17 @@ Query OK, 1 row affected (0.01 sec)
 
 2 rows in set (0.00 sec)
 
-### mysql> alter table review add constraint id primary key(id);<br>
-Query OK, 0 rows affected (0.08 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+``` mysql> alter table review add constraint id primary key(id);<br>```
+```Query OK, 0 rows affected (0.08 sec)```
+```Records: 0  Duplicates: 0  Warnings: 0```
+
+ ### creating table;
+
+``` create table bookings(id int,name varchar(40),totalrooms int(2),adults int(2),children int(2),foreign key(id) references review(id));<br>```
+```Query OK, 0 rows affected, 3 warnings (0.06 sec)```
 
 
-### create table bookings(id int,name varchar(40),totalrooms int(2),adults int(2),children int(2),foreign key(id) references review(id));<br>
-Query OK, 0 rows affected, 3 warnings (0.06 sec)
-
-
-### mysql> desc bookings;
+``` mysql> desc bookings;```
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -140,13 +143,13 @@ Query OK, 0 rows affected, 3 warnings (0.06 sec)
 5 rows in set (0.00 sec)
 
 
-### mysql> insert into bookings values(1,'Haiden',3,3,2);<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into bookings values(1,'Haiden',3,3,2);<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
-### mysql> insert into bookings values(2,'aswath',4,2,5);<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into bookings values(2,'aswath',4,2,5);<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
-### mysql> select *from bookings;
+``` mysql> select *from bookings;```
 
 | id   | name   | totalrooms | adults | children |
 |:----|:----|:---|:----|:----|
@@ -155,12 +158,13 @@ Query OK, 1 row affected (0.01 sec)
 
 2 rows in set (0.00 sec)
 
+### creating table;
 
-### mysql> create table special_offers(id int primary key auto_increment,name varchar(40),Offer_date date);<br>
-Query OK, 0 rows affected (0.04 sec)
+``` mysql> create table special_offers(id int primary key auto_increment,name varchar(40),Offer_date date);<br>```
+```Query OK, 0 rows affected (0.04 sec)```
 
 
-### mysql> desc special_offers;
+``` mysql> desc special_offers;```
 
 | Field      | Type        | Null | Key | Default | Extra          |
 |:----|:---|:----|:---|:----|:----|
@@ -171,14 +175,14 @@ Query OK, 0 rows affected (0.04 sec)
 3 rows in set (0.00 sec)
 
 
-### mysql> insert into special_offers(name,Offer_date) values('Haiden','2022-03-16');<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into special_offers(name,Offer_date) values('Haiden','2022-03-16');<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
-### mysql> insert into special_offers(name,Offer_date) values('aswath','2022-03-18');<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into special_offers(name,Offer_date) values('aswath','2022-03-18');<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
 
-### mysql> select * from special_offers;
+``` mysql> select * from special_offers;```
 
 | id | name   | Offer_date |
 |:----|:---|:----|
@@ -187,12 +191,13 @@ Query OK, 1 row affected (0.01 sec)
 
 2 rows in set (0.00 sec)
 
+ ### creating tables;
 
-### mysql> create table admins(name varchar(30) primary key,password char(8));<br>
-Query OK, 0 rows affected (0.04 sec)
+``` mysql> create table admins(name varchar(30) primary key,password char(8));<br>```
+```Query OK, 0 rows affected (0.04 sec)```
 
 
-### mysql> desc admins;
+```mysql> desc admins;```
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -202,15 +207,15 @@ Query OK, 0 rows affected (0.04 sec)
 2 rows in set (0.00 sec)
 
 
-### mysql> insert into admins values('Haiden','password');<br>
+```mysql> insert into admins values('Haiden','password');<br>```
 Query OK, 1 row affected (0.02 sec)
 
 
-### mysql> insert into admins values('aswath','aswathka');<br>
+``` mysql> insert into admins values('aswath','aswathka');<br>```
 Query OK, 1 row affected (0.01 sec)
 
 
-### mysql> select * from admins;
+``` mysql> select * from admins;```
 
 | name   | password |
 |:----|:----|
@@ -220,22 +225,14 @@ Query OK, 1 row affected (0.01 sec)
 2 rows in set (0.00 sec)
 
 
-### mysql> desc review;
 
-| Field    | Type        | Null | Key | Default | Extra |
-|:----|:----|:----|:----|:----|:----|
-| id       | int         | NO   | PRI | NULL    |       |
-| name     | varchar(40) | NO   | MUL | NULL    |       |
-| feedback | varchar(30) | NO   |     | NULL    |       |
+### creating table;
 
-3 rows in set (0.00 sec)
+ ``` create table adding_hotels(name varchar(50),hotel_name varchar(50),owner_name varchar(40),phone_number int(10),foreign key(name) references admins(name));<br>```
+```Query OK, 0 rows affected, 1 warning (0.04 sec)```
 
 
- ### create table adding_hotels(name varchar(50),hotel_name varchar(50),owner_name varchar(40),phone_number int(10),foreign key(name) references admins(name));<br>
-Query OK, 0 rows affected, 1 warning (0.04 sec)
-
-
-### mysql> desc adding_hotels;
+``` mysql> desc adding_hotels;```
 
 | Field        | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -247,15 +244,15 @@ Query OK, 0 rows affected, 1 warning (0.04 sec)
 4 rows in set (0.00 sec)
 
 
-### mysql> insert into adding_hotels values('Haiden','Hilton','Haidenfdo',1234567890);<br>
-Query OK, 1 row affected (0.01 sec)
+``` mysql> insert into adding_hotels values('Haiden','Hilton','Haidenfdo',1234567890);<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
 
-### mysql> insert into adding_hotels values('aswath','Rangoli','aswathdon',1234567890);<br>
-Query OK, 1 row affected (0.01 sec)
+```mysql> insert into adding_hotels values('aswath','Rangoli','aswathdon',1234567890);<br>```
+```Query OK, 1 row affected (0.01 sec)```
 
 
-### mysql> select * from adding_hotels;
+```mysql> select * from adding_hotels;```
 
 | name   | hotel_name | owner_name | phone_number |
 |:----|:----|:----|:----|
@@ -267,10 +264,10 @@ Query OK, 1 row affected (0.01 sec)
 
 <h1>Bookings</h1>
 
-### mysql> select users.id,users.name,roomform.total_rooms,roomform.adults,roomform.childrens,roomform.room_no
-    -> from users
-    -> inner join roomform
-    -> on users.id=roomform.id;
+``` mysql> select users.id,users.name,roomform.total_rooms,roomform.adults,roomform.childrens,roomform.room_no```
+  ```  -> from users```
+  ```  -> inner join roomform```
+  ```  -> on users.id=roomform.id;```
 
 | id   | name   | total_rooms | adults | childrens | room_no |
 |:----|:---|:----|:----|:----|:----|
@@ -280,11 +277,11 @@ Query OK, 1 row affected (0.01 sec)
 2 rows in set (0.01 sec)
 
 
-### mysql> select users.id,users.name,review.feedback
-    -> from users
-    -> inner join review
-    -> on users.id=review.id
-    -> where review.feedback='good';
+``` mysql> select users.id,users.name,review.feedback```
+   ``` -> from users```
+  ```  -> inner join review```
+   ``` -> on users.id=review.id```
+   ``` -> where review.feedback='good';```
 
 
 | id   | name   | feedback |
@@ -294,10 +291,10 @@ Query OK, 1 row affected (0.01 sec)
 1 row in set (0.00 sec)
 
 
-### mysql> select roomform.id,roomform.name,roomform.room_no,employees.emp_id,emp_name
-    -> from roomform
-    -> left join employees
-    -> on roomform.id=employees.emp_id;
+``` mysql> select roomform.id,roomform.name,roomform.room_no,employees.emp_id,emp_name```
+   ``` -> from roomform```
+   ``` -> left join employees```
+    ```-> on roomform.id=employees.emp_id;```
 
 
 | id   | name   | room_no | emp_id | emp_name |
@@ -311,12 +308,12 @@ Query OK, 1 row affected (0.01 sec)
 ###### creating index;
 
 
-###  mysql> create index pers_id
-  ###  -> on users(email);
+```  mysql> create index pers_id```
+  ``` -> on users(email);```
 Query OK, 0 rows affected (0.05 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
-### mysql> show index from users;
+``` mysql> show index from users;```
 
 | Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
 |:----|:----|:-----|:----|:---|:----|:----|:----|:----|:-----|:----|:----|:----|:----|:---|
@@ -339,12 +336,12 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 ### multiple subquery;
 
-   ``` mysql> select name,email,age,roll_id
-   -> from users
-   -> where (name,age) IN
-   -> (select name,age
-   -> from users
-   -> group by name);```
+   ``` mysql> select name,email,age,roll_id```
+  ``` -> from users```
+  ``` -> where (name,age) IN```
+  ``` -> (select name,age```
+  ``` -> from users```
+  ``` -> group by name);```
 
 
 | name   | email               | age  | roll_id |
@@ -356,13 +353,13 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 
 
-#### creating view;
+### creating view;
 
-```mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;
-Query OK, 0 rows affected (0.01 sec)```
+```mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;```
+``` Query OK, 0 rows affected (0.01 sec)```
 
-``` mysql> select * from server_list;
-Empty set (0.01 sec)```
+``` mysql> select * from server_list;```
+```Empty set (0.01 sec)```
 
 ``` mysql> desc server_list;```
 

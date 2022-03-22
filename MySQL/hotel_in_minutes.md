@@ -382,20 +382,9 @@ Records: 0  Duplicates: 0  Warnings: 0
 | order_id   | int         | YES  |     | NULL    |       |
 | total_bill | int         | YES  |     | NULL    |       |
 
-4 rows in set (0.00 sec)
 
-desc bill;
 
-| Field      | Type        | Null | Key | Default | Extra |
-|:----|:----|:----|:----|:----|:----|
-| name       | varchar(40) | YES  | MUL | NULL    |       |
-| bill_id    | int         | NO   | PRI | NULL    |       |
-| order_id   | int         | YES  |     | NULL    |       |
-| total_bill | int         | YES  |     | NULL    |       |
-
-4 rows in set (0.00 sec)
-
-mysql> desc bookings;
+``` desc bookings;```
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -405,9 +394,8 @@ mysql> desc bookings;
 | adults     | int         | YES  |     | NULL    |       |
 | children   | int         | YES  |     | NULL    |       |
 
-5 rows in set (0.00 sec)
 
-mysql> desc employees;
+``` desc employees;```
 
 | Field      | Type        | Null | Key | Default | Extra          |
 |:----|:----|:----|:----|:-----|:----|
@@ -415,27 +403,24 @@ mysql> desc employees;
 | emp_name   | varchar(40) | YES  |     | NULL    |                |
 | emp_salary | int         | YES  |     | NULL    |                |
 
-3 rows in set (0.00 sec)
 
-mysql> desc manager;
+``` desc manager;```
 
 | Field      | Type | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
 | manager_id | int  | YES  | MUL | NULL    |       |
 | order_id   | int  | YES  |     | NULL    |       |
 
-2 rows in set (0.00 sec)
 
-mysql> desc payment;
+``` desc payment;```
 
 | Field      | Type | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:---|
 | payment_id | int  | YES  |     | NULL    |       |
 | bill_id    | int  | YES  | MUL | NULL    |       |
 
-2 rows in set (0.00 sec)
 
-mysql> desc review;
+``` desc review;```
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -443,9 +428,8 @@ mysql> desc review;
 | name     | varchar(40) | YES  | MUL | NULL    |       |
 | feedback | varchar(30) | YES  |     | NULL    |       |
 
-3 rows in set (0.00 sec)
 
-mysql> desc room;
+``` desc room;```
 
 | Field           | Type        | Null | Key | Default | Extra |
 |:---|:----|:----|:-----|:----|:----|
@@ -454,9 +438,8 @@ mysql> desc room;
 | manager_id      | int         | YES  | MUL | NULL    |       |
 | customer_id     | int         | YES  |     | NULL    |       |
 
-4 rows in set (0.01 sec)
 
-mysql> desc roomform;
+``` desc roomform;```
 
 | Field       | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
@@ -468,27 +451,24 @@ mysql> desc roomform;
 | childrens   | int         | YES  |     | NULL    |       |
 | room_no     | int         | YES  |     | NULL    |       |
 
-7 rows in set (0.01 sec)
 
-mysql> desc server;
+```desc server;```
 
 | Field     | Type | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
 | server_id | int  | YES  | MUL | NULL    |       |
 | order_id  | int  | YES  |     | NULL    |       |
 
-2 rows in set (0.00 sec)
 
-mysql> desc server_list;
+``` desc server_list;```
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:-----|:----|
 | emp_name   | varchar(40) | YES  |     | NULL    |       |
 | emp_salary | int         | YES  |     | NULL    |       |
 
-2 rows in set (0.01 sec)
 
-mysql> desc special_offers;
+``` desc special_offers;```
 
 | Field      | Type        | Null | Key | Default | Extra          |
 |:----|:----|:----|:----|:----|:----|
@@ -496,9 +476,8 @@ mysql> desc special_offers;
 | name       | varchar(40) | YES  |     | NULL    |                |
 | Offer_date | date        | YES  |     | NULL    |                |
 
-3 rows in set (0.00 sec)
 
-mysql> desc users;
+``` desc users;```
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:---|
@@ -509,7 +488,7 @@ mysql> desc users;
 | age      | int         | YES  |     | NULL    |       |
 | roll_id  | int         | YES  |     | NULL    |       |
 
-6 rows in set (0.00 sec)
+
 
 
 

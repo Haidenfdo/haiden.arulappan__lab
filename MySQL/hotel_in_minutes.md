@@ -406,81 +406,81 @@ desc bill;
 4 rows in set (0.00 sec)
 
 desc bill;
-+------------+-------------+------+-----+---------+-------+
+
 | Field      | Type        | Null | Key | Default | Extra |
-+------------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | name       | varchar(40) | YES  | MUL | NULL    |       |
 | bill_id    | int         | NO   | PRI | NULL    |       |
 | order_id   | int         | YES  |     | NULL    |       |
 | total_bill | int         | YES  |     | NULL    |       |
-+------------+-------------+------+-----+---------+-------+
+
 4 rows in set (0.00 sec)
 
 mysql> desc bookings;
-+------------+-------------+------+-----+---------+-------+
+
 | Field      | Type        | Null | Key | Default | Extra |
-+------------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | id         | int         | YES  | MUL | NULL    |       |
 | name       | varchar(40) | YES  |     | NULL    |       |
 | totalrooms | int         | YES  |     | NULL    |       |
 | adults     | int         | YES  |     | NULL    |       |
 | children   | int         | YES  |     | NULL    |       |
-+------------+-------------+------+-----+---------+-------+
+
 5 rows in set (0.00 sec)
 
 mysql> desc employees;
-+------------+-------------+------+-----+---------+----------------+
+
 | Field      | Type        | Null | Key | Default | Extra          |
-+------------+-------------+------+-----+---------+----------------+
+|:----|:----|:----|:----|:-----|:----|
 | emp_id     | int         | NO   | PRI | NULL    | auto_increment |
 | emp_name   | varchar(40) | YES  |     | NULL    |                |
 | emp_salary | int         | YES  |     | NULL    |                |
-+------------+-------------+------+-----+---------+----------------+
+
 3 rows in set (0.00 sec)
 
 mysql> desc manager;
-+------------+------+------+-----+---------+-------+
+
 | Field      | Type | Null | Key | Default | Extra |
-+------------+------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | manager_id | int  | YES  | MUL | NULL    |       |
 | order_id   | int  | YES  |     | NULL    |       |
-+------------+------+------+-----+---------+-------+
+
 2 rows in set (0.00 sec)
 
 mysql> desc payment;
-+------------+------+------+-----+---------+-------+
+
 | Field      | Type | Null | Key | Default | Extra |
-+------------+------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:---|
 | payment_id | int  | YES  |     | NULL    |       |
 | bill_id    | int  | YES  | MUL | NULL    |       |
-+------------+------+------+-----+---------+-------+
+
 2 rows in set (0.00 sec)
 
 mysql> desc review;
-+----------+-------------+------+-----+---------+-------+
+
 | Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | id       | int         | NO   | PRI | NULL    |       |
 | name     | varchar(40) | YES  | MUL | NULL    |       |
 | feedback | varchar(30) | YES  |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
+
 3 rows in set (0.00 sec)
 
 mysql> desc room;
-+-----------------+-------------+------+-----+---------+-------+
+
 | Field           | Type        | Null | Key | Default | Extra |
-+-----------------+-------------+------+-----+---------+-------+
+|:---|:----|:----|:-----|:----|:----|
 | room_no         | int         | YES  |     | NULL    |       |
 | occupied_status | varchar(20) | YES  |     | NULL    |       |
 | manager_id      | int         | YES  | MUL | NULL    |       |
 | customer_id     | int         | YES  |     | NULL    |       |
-+-----------------+-------------+------+-----+---------+-------+
+
 4 rows in set (0.01 sec)
 
 mysql> desc roomform;
-+-------------+-------------+------+-----+---------+-------+
+
 | Field       | Type        | Null | Key | Default | Extra |
-+-------------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | id          | int         | YES  |     | NULL    |       |
 | name        | varchar(40) | NO   | PRI | NULL    |       |
 | email       | varchar(50) | YES  | MUL | NULL    |       |
@@ -488,41 +488,41 @@ mysql> desc roomform;
 | adults      | int         | YES  |     | NULL    |       |
 | childrens   | int         | YES  |     | NULL    |       |
 | room_no     | int         | YES  |     | NULL    |       |
-+-------------+-------------+------+-----+---------+-------+
+
 7 rows in set (0.01 sec)
 
 mysql> desc server;
-+-----------+------+------+-----+---------+-------+
+
 | Field     | Type | Null | Key | Default | Extra |
-+-----------+------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:----|
 | server_id | int  | YES  | MUL | NULL    |       |
 | order_id  | int  | YES  |     | NULL    |       |
-+-----------+------+------+-----+---------+-------+
+
 2 rows in set (0.00 sec)
 
 mysql> desc server_list;
-+------------+-------------+------+-----+---------+-------+
+
 | Field      | Type        | Null | Key | Default | Extra |
-+------------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:-----|:----|
 | emp_name   | varchar(40) | YES  |     | NULL    |       |
 | emp_salary | int         | YES  |     | NULL    |       |
-+------------+-------------+------+-----+---------+-------+
+
 2 rows in set (0.01 sec)
 
 mysql> desc special_offers;
-+------------+-------------+------+-----+---------+----------------+
+
 | Field      | Type        | Null | Key | Default | Extra          |
-+------------+-------------+------+-----+---------+----------------+
+|:----|:----|:----|:----|:----|:----|
 | id         | int         | NO   | PRI | NULL    | auto_increment |
 | name       | varchar(40) | YES  |     | NULL    |                |
 | Offer_date | date        | YES  |     | NULL    |                |
-+------------+-------------+------+-----+---------+----------------+
+
 3 rows in set (0.00 sec)
 
 mysql> desc users;
-+----------+-------------+------+-----+---------+-------+
+
 | Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
+|:----|:----|:----|:----|:----|:---|
 | id       | int         | YES  |     | NULL    |       |
 | name     | varchar(50) | YES  |     | NULL    |       |
 | email    | varchar(50) | NO   | PRI | NULL    |       |

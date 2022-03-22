@@ -27,11 +27,11 @@ Empty set (0.00 sec)
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:-----|:----|:---|
-| id       | int         | YES  |     | NULL    |       |
-| name     | varchar(50) | YES  |     | NULL    |       |
-| email    | varchar(50) | NO   | PRI | NULL    |       |
-| password | varchar(8)  | YES  |     | NULL    |       |
-| age      | int         | YES  |     | NULL    |       |
+| id       | int         | NO  |     | NULL    |       |
+| name     | varchar(50) | NO  |     | NULL    |       |
+| email    | varchar(50) | NO  | PRI | NULL    |       |
+| password | varchar(8)  | NO  |     | NULL    |       |
+| age      | int         | NO  |     | NULL    |       |
 
 5 rows in set (0.00 sec)
 
@@ -59,12 +59,12 @@ Query OK, 1 row affected (0.01 sec)
 
 | Field       | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
-| id          | int         | YES  |     | NULL    |       |
+| id          | int         | NO   |     | NULL    |       |
 | name        | varchar(40) | NO   | PRI | NULL    |       |
-| email       | varchar(50) | YES  | MUL | NULL    |       |
-| total_rooms | int         | YES  |     | NULL    |       |
-| adults      | int         | YES  |     | NULL    |       |
-| childrens   | int         | YES  |     | NULL    |       |
+| email       | varchar(50) | NO   | MUL | NULL    |       |
+| total_rooms | int         | NO   |     | NULL    |       |
+| adults      | int         | NO   |     | NULL    |       |
+| childrens   | int         | NO   |     | NULL    |       |
 
 6 rows in set (0.01 sec)
 
@@ -94,9 +94,9 @@ Query OK, 0 rows affected (0.05 sec)
 
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
-| id       | int         | YES  |     | NULL    |       |
-| name     | varchar(40) | YES  | MUL | NULL    |       |
-| feedback | varchar(30) | YES  |     | NULL    |       |
+| id       | int         | NO   |     | NULL    |       |
+| name     | varchar(40) | NO   | MUL | NULL    |       |
+| feedback | varchar(30) | NO   |     | NULL    |       |
 
 3 rows in set (0.01 sec)
 
@@ -131,11 +131,11 @@ Query OK, 0 rows affected, 3 warnings (0.06 sec)
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
-| id         | int         | YES  | MUL | NULL    |       |
-| name       | varchar(40) | YES  |     | NULL    |       |
-| totalrooms | int         | YES  |     | NULL    |       |
-| adults     | int         | YES  |     | NULL    |       |
-| children   | int         | YES  |     | NULL    |       |
+| id         | int         | NO   | MUL | NULL    |       |
+| name       | varchar(40) | NO   |     | NULL    |       |
+| totalrooms | int         | NO   |     | NULL    |       |
+| adults     | int         | NO   |     | NULL    |       |
+| children   | int         | NO   |     | NULL    |       |
 
 5 rows in set (0.00 sec)
 
@@ -165,8 +165,8 @@ Query OK, 0 rows affected (0.04 sec)
 | Field      | Type        | Null | Key | Default | Extra          |
 |:----|:---|:----|:---|:----|:----|
 | id         | int         | NO   | PRI | NULL    | auto_increment |
-| name       | varchar(40) | YES  |     | NULL    |                |
-| Offer_date | date        | YES  |     | NULL    |                |
+| name       | varchar(40) | NO   |     | NULL    |                |
+| Offer_date | date        | NO   |     | NULL    |                |
 
 3 rows in set (0.00 sec)
 
@@ -197,7 +197,7 @@ Query OK, 0 rows affected (0.04 sec)
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
 | name     | varchar(30) | NO   | PRI | NULL    |       |
-| password | char(8)     | YES  |     | NULL    |       |
+| password | char(8)     | NO   |     | NULL    |       |
 
 2 rows in set (0.00 sec)
 
@@ -225,8 +225,8 @@ Query OK, 1 row affected (0.01 sec)
 | Field    | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
 | id       | int         | NO   | PRI | NULL    |       |
-| name     | varchar(40) | YES  | MUL | NULL    |       |
-| feedback | varchar(30) | YES  |     | NULL    |       |
+| name     | varchar(40) | NO   | MUL | NULL    |       |
+| feedback | varchar(30) | NO   |     | NULL    |       |
 
 3 rows in set (0.00 sec)
 
@@ -239,10 +239,10 @@ Query OK, 0 rows affected, 1 warning (0.04 sec)
 
 | Field        | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:----|:----|:----|
-| name         | varchar(50) | YES  | MUL | NULL    |       |
-| hotel_name   | varchar(50) | YES  |     | NULL    |       |
-| owner_name   | varchar(40) | YES  |     | NULL    |       |
-| phone_number | int         | YES  |     | NULL    |       |
+| name         | varchar(50) | NO   | MUL | NULL    |       |
+| hotel_name   | varchar(50) | NO   |     | NULL    |       |
+| owner_name   | varchar(40) | NO   |     | NULL    |       |
+| phone_number | int         | NO   |     | NULL    |       |
 
 4 rows in set (0.00 sec)
 
@@ -320,15 +320,15 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 | Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
 |:----|:----|:-----|:----|:---|:----|:----|:----|:----|:-----|:----|:----|:----|:----|:---|
-| users |          0 | PRIMARY  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
-| users |          1 | pers_id  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| users |          0 | PRIMARY  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | NO      | NULL       |
+| users |          1 | pers_id  |            1 | email       | A         |           2 |     NULL |   NULL |      | BTREE      |         |               | NO      | NULL       |
 
 2 rows in set (0.02 sec)
 
 
 ##### subquery;
 
-### mysql> select a.*,b.* from(select * from users where age>18) as a,(select * from roomform where room_no=8) as b;
+``` mysql> select a.*,b.* from(select * from users where age>18) as a,(select * from roomform where room_no=8) as b;
 
 | id   | name   | email               | password | age  | roll_id | id   | name   | email           | total_rooms | adults | childrens | room_no |
 |:----|:----|:----|:---|:----|:----|:----|:----|:----|:----|:-----|:----|:---|
@@ -339,12 +339,12 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 ### multiple subquery;
 
-  ### mysql> select name,email,age,roll_id
-   ### -> from users
-  ###  -> where (name,age) IN
-  ###  -> (select name,age
-  ###  -> from users
-  ###  -> group by name);
+   ``` mysql> select name,email,age,roll_id
+   -> from users
+   -> where (name,age) IN
+   -> (select name,age
+   -> from users
+   -> group by name);
 
 
 | name   | email               | age  | roll_id |
@@ -358,43 +358,25 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 #### creating view;
 
-### mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;
+```mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;
 Query OK, 0 rows affected (0.01 sec)
 
-### mysql> select * from server_list;
+``` mysql> select * from server_list;
 Empty set (0.01 sec)
 
-### mysql> desc server_list;
+``` mysql> desc server_list;
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:---|:----|:---|
-| emp_name   | varchar(40) | YES  |     | NULL    |       |
-| emp_salary | int         | YES  |     | NULL    |       |
+| emp_name   | varchar(40) | NO   |     | NULL    |       |
+| emp_salary | int         | NO   |     | NULL    |       |
 
 2 rows in set (0.00 sec)
 
 
-| Tables_in_hotelinminutes |
-|:----|
-| adding_hotels            |
-| admins                   |
-| bill                     |
-| bookings                 |
-| employees                |
-| manager                  |
-| payment                  |
-| review                   |
-| room                     |
-| roomform                 |
-| server                   |
-| server_list              |
-| special_offers           |
-| users                    |
-
-14 rows in set (0.00 sec)
 
 
-desc bill;
+```desc bill;
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:---|:----|:---|:----|
@@ -529,7 +511,7 @@ mysql> desc users;
 | password | varchar(8)  | YES  |     | NULL    |       |
 | age      | int         | YES  |     | NULL    |       |
 | roll_id  | int         | YES  |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
+
 6 rows in set (0.00 sec)
 
 

@@ -328,7 +328,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 
 ##### subquery;
 
-``` mysql> select a.*,b.* from(select * from users where age>18) as a,(select * from roomform where room_no=8) as b;
+``` mysql> select a.*,b.* from(select * from users where age>18) as a,(select * from roomform where room_no=8) as b;```
 
 | id   | name   | email               | password | age  | roll_id | id   | name   | email           | total_rooms | adults | childrens | room_no |
 |:----|:----|:----|:---|:----|:----|:----|:----|:----|:----|:-----|:----|:---|
@@ -344,7 +344,7 @@ Records: 0  Duplicates: 0  Warnings: 0
    -> where (name,age) IN
    -> (select name,age
    -> from users
-   -> group by name);
+   -> group by name);```
 
 
 | name   | email               | age  | roll_id |
@@ -359,12 +359,12 @@ Records: 0  Duplicates: 0  Warnings: 0
 #### creating view;
 
 ```mysql> create view server_list as select emp_name,emp_salary from employees where emp_id=1 and emp_id=2;
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.01 sec)```
 
 ``` mysql> select * from server_list;
-Empty set (0.01 sec)
+Empty set (0.01 sec)```
 
-``` mysql> desc server_list;
+``` mysql> desc server_list;```
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:----|:---|:----|:---|
@@ -376,7 +376,7 @@ Empty set (0.01 sec)
 
 
 
-```desc bill;
+```desc bill;```
 
 | Field      | Type        | Null | Key | Default | Extra |
 |:----|:----|:---|:----|:---|:----|

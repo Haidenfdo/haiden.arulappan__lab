@@ -498,7 +498,7 @@ Records: 0  Duplicates: 0  Warnings: 0
 ![alt er-model-Him](ermodel.png)
 
 ## EER Model for Hotel_in_minutes Database:
-![alt eer-model-Him](eer model.png)
+![alt eer-model-Him](eer_model.png)
 
 
 

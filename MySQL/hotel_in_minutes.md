@@ -492,7 +492,13 @@ Records: 0  Duplicates: 0  Warnings: 0
 | password | varchar(8)  | YES  |     | NULL    |       |
 | age      | int         | YES  |     | NULL    |       |
 | roll_id  | int         | YES  |     | NULL    |       |
+***
 
+## ER Model for Hotel_in_minutes Database:
+![alt er-model-Him](ermodel.png)
+
+## EER Model for Hotel_in_minutes Database:
+![alt eer-model-Him](eer model.png)
 
 
 

@@ -191,7 +191,7 @@ Query OK, 1 row affected (0.01 sec)
 
 ***
 
- <h1> creating tables;<h1>
+ <h1> creating tables;</h1>
 
 ``` mysql> create table admins(name varchar(30) primary key,password char(8));<br>```
 ```Query OK, 0 rows affected (0.04 sec)```

@@ -1,17 +1,20 @@
+import java.util.Scanner;
+
 public class average {
 
     public static void main(String[] args) {
 
-        int num1 = 5;
-        int num2 = 7;
-        int num3 = 4;
-        int num4 = 3;
-
-        int total = num1 + num2 + num3 + num4;
-
-        int result = total / 4;
-
-        System.out.println(result);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the limit:");
+        int num1 = in.nextInt();
+        int sum = 0, num2;
+        for (int i = 1; i <= num1; i++) {
+            System.out.println("Enter the number" + i + ":");
+            num2 = in.nextInt();
+            sum += num2;
+        }
+        System.out.println("The sum of the given number is" + sum);
+        System.out.println("The average of the given number is" + sum / num1);
     }
 
 }

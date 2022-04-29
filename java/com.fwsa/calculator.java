@@ -1,3 +1,5 @@
+package com.fwsa;
+
 import java.util.Scanner;
 
 public class calculator {
